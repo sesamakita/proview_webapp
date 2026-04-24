@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical RFI - ProView</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="mesh-bg">
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="assets/logo.png" alt="ProView Logo">
+                </div>
+                <h3>ProView</h3>
+            </div>
+
+            <nav class="nav-links">
+                <a href="dashboard.html" class="nav-link">
+                    <span class="material-icons">dashboard</span>
+                    <span>Monitoring Hub</span>
+                </a>
+
+                <p class="nav-group-label">Operational</p>
+                <a href="progress.html" class="nav-link">
+                    <span class="material-icons">trending_up</span>
+                    <span>Physical Progress</span>
+                </a>
+                <a href="incidents.html" class="nav-link">
+                    <span class="material-icons">report_problem</span>
+                    <span>Incidents & HSE</span>
+                </a>
+                <a href="rfi.html" class="nav-link active">
+                    <span class="material-icons">help_outline</span>
+                    <span>Technical RFI</span>
+                </a>
+
+                <p class="nav-group-label">Administrative</p>
+                <a href="finance.html" class="nav-link">
+                    <span class="material-icons">account_balance_wallet</span>
+                    <span>Finance & Budget</span>
+                </a>
+                <a href="resources.html" class="nav-link">
+                    <span class="material-icons">inventory_2</span>
+                    <span>Resources</span>
+                </a>
+
+                <div style="margin-top: auto; padding-top: 20px; border-top: 2px solid #000000;">
+                    <a href="settings.html" class="nav-link">
+                        <span class="material-icons">settings</span>
+                        <span>Settings</span>
+                    </a>
+                    <a href="index.html" class="nav-link" style="color: #F87171;">
+                        <span class="material-icons">logout</span>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-navbar">
+                <div class="page-header">
+                    <h2>Technical RFI Tracking</h2>
+                </div>
+                
+                <div style="display: flex; gap: 24px; align-items: center;">
+                    <button class="btn-primary" style="height: 44px; padding: 0 20px; font-size: 14px;">
+                        <span class="material-icons">add</span> New RFI
+                    </button>
+                    <div style="width: 40px; height: 40px; border-radius: 12px; background: #1E1B4B; display: flex; align-items: center; justify-content: center; color: white;">EU</div>
+                </div>
+            </header>
+
+            <div class="dashboard-padding">
+                <!-- RFI Summary Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card-premium">
+                        <div class="stat-header">
+                            <div class="stat-icon" style="background: rgba(79, 70, 229, 0.1); color: var(--primary-color);">
+                                <span class="material-icons">assignment</span>
+                            </div>
+                        </div>
+                        <div class="stat-val">48</div>
+                        <div class="stat-label">Total RFIs</div>
+                    </div>
+                    <div class="stat-card-premium">
+                        <div class="stat-header">
+                            <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);">
+                                <span class="material-icons">pending_actions</span>
+                            </div>
+                            <span class="badge warning">Action Needed</span>
+                        </div>
+                        <div class="stat-val">12</div>
+                        <div class="stat-label">Pending Response</div>
+                    </div>
+                    <div class="stat-card-premium">
+                        <div class="stat-header">
+                            <div class="stat-icon" style="background: rgba(239, 68, 68, 0.1); color: var(--error);">
+                                <span class="material-icons">timer</span>
+                            </div>
+                            <span class="badge error">Overdue</span>
+                        </div>
+                        <div class="stat-val">05</div>
+                        <div class="stat-label">Overdue RFIs</div>
+                    </div>
+                    <div class="stat-card-premium">
+                        <div class="stat-header">
+                            <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--success);">
+                                <span class="material-icons">task_alt</span>
+                            </div>
+                        </div>
+                        <div class="stat-val">31</div>
+                        <div class="stat-label">Closed / Resolved</div>
+                    </div>
+                </div>
+
+                <!-- RFI Table -->
+                <div class="card" style="padding: 0; overflow: hidden;">
+                    <div style="padding: 24px; border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;">
+                        <h3 class="section-title">Technical Request Log</h3>
+                        <div style="display: flex; gap: 12px;">
+                            <select style="padding: 8px 16px; border: 1px solid var(--border-light); border-radius: 8px; font-size: 14px; outline: none; background: white;">
+                                <option>Filter: All Category</option>
+                                <option>Structural</option>
+                                <option>Architectural</option>
+                                <option>MEP</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: #F8FAFC; text-align: left;">
+                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">RFI ID</th>
+                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">Subject</th>
+                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">Category</th>
+                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">Due Date</th>
+                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">Status</th>
+                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted); text-align: right;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-light);">
+                                <td style="padding: 20px 24px; font-size: 14px; font-weight: 700; color: var(--primary-color);">RFI-STR-0042</td>
+                                <td style="padding: 20px 24px;">
+                                    <div style="font-weight: 600; font-size: 14px;">Rebar Conflict at Column C12</div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Sentosa Bridge Project</div>
+                                </td>
+                                <td style="padding: 20px 24px; font-size: 14px;">Structural</td>
+                                <td style="padding: 20px 24px; font-size: 14px; color: var(--error); font-weight: 600;">Today (Expired)</td>
+                                <td style="padding: 20px 24px;"><span class="badge warning">In Review</span></td>
+                                <td style="padding: 20px 24px; text-align: right;"><button class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">Reply</button></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);">
+                                <td style="padding: 20px 24px; font-size: 14px; font-weight: 700; color: var(--primary-color);">RFI-ARC-0015</td>
+                                <td style="padding: 20px 24px;">
+                                    <div style="font-weight: 600; font-size: 14px;">Curtain Wall Bracket Detail</div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Grand Tower Site</div>
+                                </td>
+                                <td style="padding: 20px 24px; font-size: 14px;">Architectural</td>
+                                <td style="padding: 20px 24px; font-size: 14px;">28 Apr, 2026</td>
+                                <td style="padding: 20px 24px;"><span class="badge info">Open</span></td>
+                                <td style="padding: 20px 24px; text-align: right;"><button class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">Open Task</button></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-light);">
+                                <td style="padding: 20px 24px; font-size: 14px; font-weight: 700; color: var(--primary-color);">RFI-MEP-0089</td>
+                                <td style="padding: 20px 24px;">
+                                    <div style="font-weight: 600; font-size: 14px;">HVAC Ducting Clearance Zone</div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Mall Expansion</div>
+                                </td>
+                                <td style="padding: 20px 24px; font-size: 14px;">MEP Systems</td>
+                                <td style="padding: 20px 24px; font-size: 14px;">Closed</td>
+                                <td style="padding: 20px 24px;"><span class="badge success">Answered</span></td>
+                                <td style="padding: 20px 24px; text-align: right;"><button class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">History</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ProView Monitoring</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="mesh-bg">
+    <div class="login-wrapper">
+        <div class="login-card-glass">
+            <div class="login-header">
+                <div class="login-icon-box">
+                    <span class="material-icons" style="font-size: 36px;">analytics</span>
+                </div>
+                <h1 class="login-title">ProView</h1>
+                <p class="text-muted">Executive Monitoring System Login</p>
+            </div>
+
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-floating">
+                    <input type="email" id="email" class="form-control" placeholder=" " required>
+                    <label for="email">Email Address</label>
+                </div>
+
+                <div class="form-floating">
+                    <input type="password" id="password" class="form-control" placeholder=" " required>
+                    <label for="password">Password</label>
+                    <span class="material-icons" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--text-light); cursor: pointer; font-size: 20px;">visibility_off</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;">
+                    <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-muted); cursor: pointer;">
+                        <input type="checkbox" style="accent-color: var(--primary-color);"> Ingat saya
+                    </label>
+                    <a href="#" style="color: var(--primary-color); font-size: 14px; font-weight: 600;">Lupa Password?</a>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Masuk ke Dashboard
+                    <span class="material-icons">arrow_forward</span>
+                </button>
+            </form>
+
+            <div style="margin-top: 32px; text-align: center; font-size: 14px; color: var(--text-muted);">
+                Butuh bantuan akses? <a href="#" style="color: var(--primary-color); font-weight: 600;">Hubungi Administrator</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const button = event.target.querySelector('button');
+            const originalText = button.innerHTML;
+            
+            button.disabled = true;
+            button.innerHTML = '<span class="material-icons" style="animation: spin 1s linear infinite;">sync</span> Autentikasi...';
+            
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1200);
+        }
+    </script>
+
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</body>
+
+</html>
