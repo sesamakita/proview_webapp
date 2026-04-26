@@ -83,10 +83,10 @@
                 <!-- Project Selector -->
                 <div style="display: flex; align-items: center; gap: 12px; background: #F1F5F9; padding: 6px 16px; border-radius: 12px; border: 1px solid var(--border-light);">
                     <span class="material-icons" style="font-size: 18px; color: var(--text-muted);">business</span>
-                    <select style="background: transparent; border: none; font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--text-main); outline: none; cursor: pointer;">
-                        <option>Grand Tower Jakarta</option>
-                        <option>Sentosa Bridge Phase II</option>
-                        <option>Mall Expansion East</option>
+                    <select id="projectSelect" onchange="updateDashboardData()" style="background: transparent; border: none; font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--text-main); outline: none; cursor: pointer;">
+                        <option value="0">Proyek Grand Tower Palu</option>
+                        <option value="1">Proyek Jembatan Poso</option>
+                        <option value="2">Fasilitas Smelter Morowali</option>
                     </select>
                 </div>
 
@@ -104,30 +104,30 @@
                 <div class="stats-grid">
                     <div class="stat-card-premium">
                         <div class="stat-header">
-                            <span class="badge success" style="background: rgba(16, 185, 129, 0.1); color: var(--success);">Sesuai Jadwal</span>
+                            <span id="statusBadge" class="badge success" style="background: rgba(16, 185, 129, 0.1); color: var(--success);">Sesuai Jadwal</span>
                         </div>
-                        <div class="stat-val">68.4%</div>
+                        <div id="statAktual" class="stat-val">68.4%</div>
                         <div class="stat-label">Progres Aktual</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
                             <span class="badge info">Rencana</span>
                         </div>
-                        <div class="stat-val">70.2%</div>
+                        <div id="statRencana" class="stat-val">70.2%</div>
                         <div class="stat-label">Progres Rencana</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
                             <span class="badge error">Deviasi</span>
                         </div>
-                        <div class="stat-val" style="color: var(--error);">-1.8%</div>
+                        <div id="statDeviasi" class="stat-val" style="color: var(--error);">-1.8%</div>
                         <div class="stat-label">Selisih Jadwal</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
                             <span class="badge warning">Peringatan</span>
                         </div>
-                        <div class="stat-val">142</div>
+                        <div id="statSisaHari" class="stat-val">142</div>
                         <div class="stat-label">Sisa Hari</div>
                     </div>
                 </div>
@@ -158,37 +158,37 @@
                             <div class="phase-item">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                                     <span style="font-weight: 700; font-size: 14px;">Pondasi & Tiang Pancang</span>
-                                    <span style="font-weight: 700; font-size: 14px; color: var(--success);">100%</span>
+                                    <span id="phase1val" style="font-weight: 700; font-size: 14px; color: var(--success);">100%</span>
                                 </div>
                                 <div style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 10px; overflow: hidden;">
-                                    <div style="width: 100%; height: 100%; background: var(--success);"></div>
+                                    <div id="phase1bar" style="width: 100%; height: 100%; background: var(--success); transition: width 0.5s;"></div>
                                 </div>
                             </div>
                             <div class="phase-item">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                                    <span style="font-weight: 700; font-size: 14px;">Struktural (Lantai 1 - 10)</span>
-                                    <span style="font-weight: 700; font-size: 14px; color: var(--primary-color);">85%</span>
+                                    <span style="font-weight: 700; font-size: 14px;">Struktural Utama</span>
+                                    <span id="phase2val" style="font-weight: 700; font-size: 14px; color: var(--primary-color);">85%</span>
                                 </div>
                                 <div style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 10px; overflow: hidden;">
-                                    <div style="width: 85%; height: 100%; background: var(--primary-color);"></div>
+                                    <div id="phase2bar" style="width: 85%; height: 100%; background: var(--primary-color); transition: width 0.5s;"></div>
                                 </div>
                             </div>
                             <div class="phase-item">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                                     <span style="font-weight: 700; font-size: 14px;">Sistem MEP</span>
-                                    <span style="font-weight: 700; font-size: 14px; color: var(--warning);">42%</span>
+                                    <span id="phase3val" style="font-weight: 700; font-size: 14px; color: var(--warning);">42%</span>
                                 </div>
                                 <div style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 10px; overflow: hidden;">
-                                    <div style="width: 42%; height: 100%; background: var(--warning);"></div>
+                                    <div id="phase3bar" style="width: 42%; height: 100%; background: var(--warning); transition: width 0.5s;"></div>
                                 </div>
                             </div>
                             <div class="phase-item">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                                     <span style="font-weight: 700; font-size: 14px;">Penyelesaian Arsitektural</span>
-                                    <span style="font-weight: 700; font-size: 14px; color: var(--text-light);">12%</span>
+                                    <span id="phase4val" style="font-weight: 700; font-size: 14px; color: var(--text-light);">12%</span>
                                 </div>
                                 <div style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 10px; overflow: hidden;">
-                                    <div style="width: 12%; height: 100%; background: var(--text-light);"></div>
+                                    <div id="phase4bar" style="width: 12%; height: 100%; background: var(--text-light); transition: width 0.5s;"></div>
                                 </div>
                             </div>
                         </div>
@@ -198,16 +198,16 @@
                         <h3 class="section-title" style="margin-bottom: 20px;">Log Aktivitas</h3>
                         <div style="display: flex; flex-direction: column; gap: 16px;">
                             <div style="padding: 12px; border-left: 4px solid var(--success); background: #F8FAFC;">
-                                <div style="font-size: 12px; color: var(--text-muted);">Hari ini, 10:30 Siang</div>
-                                <div style="font-weight: 600; font-size: 13px;">Pengecoran beton Kolom C4 - Lantai 12</div>
+                                <div id="logTime1" style="font-size: 12px; color: var(--text-muted);">Hari ini, 10:30 Siang</div>
+                                <div id="logDesc1" style="font-weight: 600; font-size: 13px;">Pengecoran beton Kolom C4 - Lantai 12</div>
                             </div>
                             <div style="padding: 12px; border-left: 4px solid var(--info); background: #F8FAFC;">
-                                <div style="font-size: 12px; color: var(--text-muted);">Kemarin, 04:15 Sore</div>
-                                <div style="font-weight: 600; font-size: 13px;">Pemeriksaan tulangan besi Sayap Barat selesai</div>
+                                <div id="logTime2" style="font-size: 12px; color: var(--text-muted);">Kemarin, 04:15 Sore</div>
+                                <div id="logDesc2" style="font-weight: 600; font-size: 13px;">Pemeriksaan tulangan besi Sayap Barat selesai</div>
                             </div>
                             <div style="padding: 12px; border-left: 4px solid var(--warning); background: #F8FAFC;">
-                                <div style="font-size: 12px; color: var(--text-muted);">23 Apr, 09:00 Pagi</div>
-                                <div style="font-weight: 600; font-size: 13px;">Kedatangan material: Balok Baja Struktural (Gelombang 4)</div>
+                                <div id="logTime3" style="font-size: 12px; color: var(--text-muted);">23 Apr, 09:00 Pagi</div>
+                                <div id="logDesc3" style="font-weight: 600; font-size: 13px;">Kedatangan material: Balok Baja Struktural</div>
                             </div>
                         </div>
                     </div>
@@ -224,24 +224,24 @@
                         <div style="border: 2px solid #000000; box-shadow: 4px 4px 0px 0px #000000; background: #FFFFFF;">
                             <img src="assets/user_img_1.jpg" style="width: 100%; height: 220px; object-fit: cover; display: block;" alt="Field Documentation 1">
                             <div style="padding: 16px; border-top: 2px solid #000000;">
-                                <div style="font-weight: 800; text-transform: uppercase; font-size: 14px;">Tinjauan Lokasi (Foto 1)</div>
-                                <div style="font-size: 11px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-top: 6px;">24 APR 2026 | DIUNGGAH OLEH PENGAWAS</div>
+                                <div id="photoTitle1" style="font-weight: 800; text-transform: uppercase; font-size: 14px;">Tinjauan Lokasi (Foto 1)</div>
+                                <div style="font-size: 11px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-top: 6px;">DIUNGGAH OLEH PENGAWAS</div>
                             </div>
                         </div>
                         <!-- Photo 2 -->
                         <div style="border: 2px solid #000000; box-shadow: 4px 4px 0px 0px #000000; background: #FFFFFF;">
                             <img src="assets/user_img_2.jpg" style="width: 100%; height: 220px; object-fit: cover; display: block;" alt="Field Documentation 2">
                             <div style="padding: 16px; border-top: 2px solid #000000;">
-                                <div style="font-weight: 800; text-transform: uppercase; font-size: 14px;">Detail Struktural (Foto 2)</div>
-                                <div style="font-size: 11px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-top: 6px;">24 APR 2026 | DIUNGGAH OLEH PENGAWAS</div>
+                                <div id="photoTitle2" style="font-weight: 800; text-transform: uppercase; font-size: 14px;">Detail Struktural (Foto 2)</div>
+                                <div style="font-size: 11px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-top: 6px;">DIUNGGAH OLEH PENGAWAS</div>
                             </div>
                         </div>
                         <!-- Photo 3 -->
                         <div style="border: 2px solid #000000; box-shadow: 4px 4px 0px 0px #000000; background: #FFFFFF;">
                             <img src="assets/user_img_3.jpg" style="width: 100%; height: 220px; object-fit: cover; display: block;" alt="Field Documentation 3">
                             <div style="padding: 16px; border-top: 2px solid #000000;">
-                                <div style="font-weight: 800; text-transform: uppercase; font-size: 14px;">Inspeksi Material (Foto 3)</div>
-                                <div style="font-size: 11px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-top: 6px;">24 APR 2026 | DIUNGGAH OLEH PENGAWAS</div>
+                                <div id="photoTitle3" style="font-weight: 800; text-transform: uppercase; font-size: 14px;">Inspeksi Material (Foto 3)</div>
+                                <div style="font-size: 11px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-top: 6px;">DIUNGGAH OLEH PENGAWAS</div>
                             </div>
                         </div>
                     </div>
@@ -251,45 +251,126 @@
     </div>
 
     <script>
-        const ctx = document.getElementById('scurveChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-                datasets: [
-                    {
-                        label: 'Planned',
-                        data: [5, 12, 22, 35, 48, 60, 70, 82, 90, 100],
-                        borderColor: '#4F46E5',
-                        borderWidth: 3,
-                        pointRadius: 0,
-                        tension: 0.3
-                    },
-                    {
-                        label: 'Actual',
-                        data: [4, 10, 20, 32, 45, 58, 68],
-                        borderColor: '#10B981',
-                        borderWidth: 4,
-                        pointRadius: 4,
-                        pointBackgroundColor: '#10B981',
-                        tension: 0.3
-                    }
-                ]
+        // Dummy data for 3 projects in Central Sulawesi
+        const dummyProjects = {
+            '0': { // Palu
+                aktual: "68.4%", rencana: "70.2%", deviasi: "-1.8%", sisaHari: "142",
+                statusText: "Sesuai Jadwal", statusBg: "rgba(16, 185, 129, 0.1)", statusColor: "var(--success)", devColor: "var(--error)",
+                phases: [100, 85, 42, 12],
+                logs: ["Pengecoran beton Kolom C4 - Lantai 12", "Pemeriksaan tulangan besi Sayap Barat", "Kedatangan material baja struktural"],
+                logTimes: ["Hari ini, 10:30 Siang", "Kemarin, 04:15 Sore", "23 Apr, 09:00 Pagi"],
+                photoTitles: ["Tinjauan Lokasi Palu", "Detail Struktural Tower", "Inspeksi Baja Material"],
+                chartActual: [4, 10, 20, 32, 45, 58, 68],
+                chartPlanned: [5, 12, 22, 35, 48, 60, 70, 82, 90, 100]
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 100,
-                        ticks: { callback: value => value + '%' }
-                    },
-                    x: { grid: { display: false } }
-                }
+            '1': { // Poso
+                aktual: "35.0%", rencana: "45.0%", deviasi: "-10.0%", sisaHari: "210",
+                statusText: "Beresiko (Cuaca)", statusBg: "rgba(245, 158, 11, 0.1)", statusColor: "var(--warning)", devColor: "var(--error)",
+                phases: [100, 30, 0, 0],
+                logs: ["Hujan deras, pengecoran jembatan ditunda", "Pemasangan bore pile pier 2 selesai", "Rapat koordinasi mitigasi longsor"],
+                logTimes: ["Hari ini, 08:00 Pagi", "Kemarin, 14:00 Siang", "22 Apr, 10:00 Pagi"],
+                photoTitles: ["Kondisi Tiang Pancang Poso", "Area Sungai Meluap", "Rapat Koordinasi Lapangan"],
+                chartActual: [2, 8, 15, 22, 30, 35],
+                chartPlanned: [5, 15, 25, 35, 45, 55, 65, 80, 95, 100]
+            },
+            '2': { // Morowali
+                aktual: "85.0%", rencana: "80.0%", deviasi: "+5.0%", sisaHari: "45",
+                statusText: "Kritis (RFI)", statusBg: "rgba(220, 38, 38, 0.1)", statusColor: "var(--error)", devColor: "var(--success)",
+                phases: [100, 100, 90, 50],
+                logs: ["Instalasi tungku peleburan utama", "Uji coba kelistrikan trafo area 1", "Pemasangan atap tahan panas"],
+                logTimes: ["Hari ini, 13:00 Siang", "Kemarin, 09:30 Pagi", "21 Apr, 16:00 Sore"],
+                photoTitles: ["Instalasi Tungku Pelebur", "Panel Kelistrikan Utama", "Pemasangan Atap Smelter"],
+                chartActual: [15, 30, 50, 65, 75, 80, 85],
+                chartPlanned: [10, 25, 45, 55, 65, 75, 80, 88, 95, 100]
             }
-        });
+        };
+
+        // Initialize Chart
+        let scurveChart;
+        function initChart() {
+            const ctx = document.getElementById('scurveChart').getContext('2d');
+            scurveChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                    datasets: [
+                        {
+                            label: 'Planned',
+                            data: dummyProjects['0'].chartPlanned,
+                            borderColor: '#4F46E5',
+                            borderWidth: 3,
+                            pointRadius: 0,
+                            tension: 0.3
+                        },
+                        {
+                            label: 'Actual',
+                            data: dummyProjects['0'].chartActual,
+                            borderColor: '#10B981',
+                            borderWidth: 4,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#10B981',
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { callback: value => value + '%' }
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function updateDashboardData() {
+            const val = document.getElementById('projectSelect').value;
+            const data = dummyProjects[val];
+
+            // Update Stats
+            document.getElementById('statAktual').innerText = data.aktual;
+            document.getElementById('statRencana').innerText = data.rencana;
+            
+            const devEl = document.getElementById('statDeviasi');
+            devEl.innerText = data.deviasi;
+            devEl.style.color = data.devColor;
+
+            document.getElementById('statSisaHari').innerText = data.sisaHari;
+
+            const badge = document.getElementById('statusBadge');
+            badge.innerText = data.statusText;
+            badge.style.background = data.statusBg;
+            badge.style.color = data.statusColor;
+
+            // Update Phases
+            for(let i=0; i<4; i++) {
+                document.getElementById(`phase${i+1}val`).innerText = data.phases[i] + '%';
+                document.getElementById(`phase${i+1}bar`).style.width = data.phases[i] + '%';
+            }
+
+            // Update Logs
+            for(let i=0; i<3; i++) {
+                document.getElementById(`logTime${i+1}`).innerText = data.logTimes[i];
+                document.getElementById(`logDesc${i+1}`).innerText = data.logs[i];
+                document.getElementById(`photoTitle${i+1}`).innerText = data.photoTitles[i];
+            }
+
+            // Update Chart
+            scurveChart.data.datasets[0].data = data.chartPlanned;
+            scurveChart.data.datasets[1].data = data.chartActual;
+            scurveChart.update();
+        }
+
+        // Run on load
+        window.onload = function() {
+            initChart();
+        };
     </script>
 </body>
 
