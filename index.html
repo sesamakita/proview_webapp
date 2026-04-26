@@ -12,43 +12,75 @@
 </head>
 
 <body class="mesh-bg">
-    <div class="login-wrapper">
-        <div class="login-card-glass">
-            <div class="login-header">
-                <div class="login-icon-box">
-                    <span class="material-icons" style="font-size: 36px;">analytics</span>
+    <div class="login-wrapper" style="padding: 24px;">
+        <div class="split-login-container">
+            <!-- Left Side: Login Form -->
+            <div class="split-login-left">
+                <!-- Logo -->
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 40px;">
+                    <div class="login-icon-box" style="width: 40px; height: 40px; margin-bottom: 0;">
+                        <span class="material-icons" style="font-size: 24px;">analytics</span>
+                    </div>
+                    <span
+                        style="font-weight: 900; font-size: 20px; letter-spacing: -1px; text-transform: uppercase;">ProView</span>
                 </div>
-                <h1 class="login-title">ProView</h1>
-                <p class="text-muted">Executive Monitoring System Login</p>
+
+                <!-- Avatar Icon -->
+                <div style="display: flex; justify-content: center; margin-bottom: 32px;">
+                    <div
+                        style="width: 80px; height: 80px; border: 3px solid #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--secondary-color); box-shadow: 4px 4px 0px 0px #000000;">
+                        <span class="material-icons" style="font-size: 40px; color: #000000;">person_outline</span>
+                    </div>
+                </div>
+
+                <form id="loginForm" onsubmit="handleLogin(event)"
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="form-floating" style="margin-bottom: 16px;">
+                        <span class="material-icons"
+                            style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); z-index: 10;">person_outline</span>
+                        <input type="text" id="username" class="form-control" placeholder=" " required
+                            style="padding-left: 56px; border-radius: 40px;">
+                        <label for="username" style="left: 56px;">USERNAME</label>
+                    </div>
+
+                    <div class="form-floating" style="margin-bottom: 24px;">
+                        <span class="material-icons"
+                            style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); z-index: 10;">lock_outline</span>
+                        <input type="password" id="password" class="form-control" placeholder=" " required
+                            style="padding-left: 56px; border-radius: 40px;">
+                        <label for="password" style="left: 56px;">PASSWORD</label>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="margin-bottom: 24px; border-radius: 40px;">
+                        MASUK
+                    </button>
+
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <label
+                            style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; color: #000000; cursor: pointer; text-transform: uppercase;">
+                            <input type="checkbox"
+                                style="accent-color: #000000; width: 14px; height: 14px; border: 2px solid #000000;">
+                            Ingat saya
+                        </label>
+                        <a href="#"
+                            style="color: #000000; font-size: 11px; font-weight: 800; text-decoration: none; text-transform: uppercase;">Lupa
+                            kata sandi Anda?</a>
+                    </div>
+                </form>
+
+                <!-- Dots at bottom -->
+                <div style="display: flex; justify-content: center; gap: 8px; margin-top: auto;">
+                    <div style="width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
+                    <div style="width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
+                    <div style="width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
+                </div>
             </div>
 
-            <form id="loginForm" onsubmit="handleLogin(event)">
-                <div class="form-floating">
-                    <input type="email" id="email" class="form-control" placeholder=" " required>
-                    <label for="email">Email Address</label>
-                </div>
-
-                <div class="form-floating">
-                    <input type="password" id="password" class="form-control" placeholder=" " required>
-                    <label for="password">Password</label>
-                    <span class="material-icons" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--text-light); cursor: pointer; font-size: 20px;">visibility_off</span>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;">
-                    <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-muted); cursor: pointer;">
-                        <input type="checkbox" style="accent-color: var(--primary-color);"> Ingat saya
-                    </label>
-                    <a href="#" style="color: var(--primary-color); font-size: 14px; font-weight: 600;">Lupa Password?</a>
-                </div>
-
-                <button type="submit" class="btn-primary">
-                    Masuk ke Dashboard
-                    <span class="material-icons">arrow_forward</span>
-                </button>
-            </form>
-
-            <div style="margin-top: 32px; text-align: center; font-size: 14px; color: var(--text-muted);">
-                Butuh bantuan akses? <a href="#" style="color: var(--primary-color); font-weight: 600;">Hubungi Administrator</a>
+            <!-- Right Side: Hero -->
+            <div class="split-login-right">
+                <img src="assets/user_img_1.jpg" alt="Construction Background"
+                    style="width: 100%; height: 100%; object-fit: cover;">
             </div>
         </div>
     </div>
@@ -58,10 +90,10 @@
             event.preventDefault();
             const button = event.target.querySelector('button');
             const originalText = button.innerHTML;
-            
+
             button.disabled = true;
-            button.innerHTML = '<span class="material-icons" style="animation: spin 1s linear infinite;">sync</span> Autentikasi...';
-            
+            button.innerHTML = '<span class="material-icons" style="animation: spin 1s linear infinite;">sync</span> AUTENTIKASI...';
+
             setTimeout(() => {
                 window.location.href = 'dashboard.html';
             }, 1200);
@@ -70,8 +102,13 @@
 
     <style>
         @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physical Progress - ProView</title>
+    <title>Progres Fisik - ProView</title>
     <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Chart.js -->
@@ -27,41 +27,47 @@
             <nav class="nav-links">
                 <a href="dashboard.html" class="nav-link">
                     <span class="material-icons">dashboard</span>
-                    <span>Monitoring Hub</span>
+                    <span>Pusat Pemantauan</span>
                 </a>
 
-                <p class="nav-group-label">Operational</p>
+                <p class="nav-group-label">Operasional</p>
                 <a href="progress.html" class="nav-link active">
                     <span class="material-icons">trending_up</span>
-                    <span>Physical Progress</span>
+                    <span>Progres Fisik</span>
                 </a>
                 <a href="incidents.html" class="nav-link">
                     <span class="material-icons">report_problem</span>
-                    <span>Incidents & HSE</span>
+                    <span>Insiden & K3</span>
                 </a>
                 <a href="rfi.html" class="nav-link">
                     <span class="material-icons">help_outline</span>
-                    <span>Technical RFI</span>
+                    <span>Kendala Teknis (RFI)</span>
                 </a>
 
-                <p class="nav-group-label">Administrative</p>
+                <p class="nav-group-label">Manajemen Mitra</p>
+                <a href="vendor.html" class="nav-link">
+                    <span class="material-icons">business_center</span>
+                    <span>Rapor Kontraktor</span>
+                </a>
+
+                <p class="nav-group-label">Administrasi</p>
                 <a href="finance.html" class="nav-link">
                     <span class="material-icons">account_balance_wallet</span>
-                    <span>Finance & Budget</span>
+                    <span>Keuangan & Anggaran</span>
                 </a>
                 <a href="resources.html" class="nav-link">
                     <span class="material-icons">inventory_2</span>
-                    <span>Resources</span>
+                    <span>SDM & Material</span>
                 </a>
 
                 <div style="margin-top: auto; padding-top: 20px; border-top: 2px solid #000000;">
                     <a href="settings.html" class="nav-link">
                         <span class="material-icons">settings</span>
-                        <span>Settings</span>
+                        <span>Pengaturan</span>
                     </a>
                     <a href="index.html" class="nav-link" style="color: #F87171;">
                         <span class="material-icons">logout</span>
-                        <span>Logout</span>
+                        <span>Keluar</span>
                     </a>
                 </div>
             </nav>
@@ -71,7 +77,7 @@
         <main class="main-content">
             <header class="top-navbar">
                 <div class="page-header">
-                    <h2>Physical Progress Analytics</h2>
+                    <h2>Analitik Progres Fisik</h2>
                 </div>
                 
                 <!-- Project Selector -->
@@ -85,10 +91,11 @@
                 </div>
 
                 <div style="display: flex; gap: 24px; align-items: center;">
-                    <div style="text-align: right;">
-                        <div style="font-size: 15px; font-weight: 700;">Executive User</div>
+                    <div style="text-align: right; text-transform: uppercase;">
+                        <div style="font-size: 10px; font-weight: 800; color: #000000; letter-spacing: 1px;">Status: Aktif</div>
+                        <div style="font-size: 14px; font-weight: 800; border-bottom: 2px solid #000000;">Direktur Utama</div>
                     </div>
-                    <div style="width: 40px; height: 40px; border-radius: 12px; background: #1E1B4B; display: flex; align-items: center; justify-content: center; color: white;">EU</div>
+                    <div style="width: 44px; min-width: 44px; height: 44px; min-height: 44px; flex-shrink: 0; border: 2px solid #000000; background: var(--secondary-color); display: flex; align-items: center; justify-content: center; color: #000000; font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 16px; box-shadow: 2px 2px 0px 0px #000000;">ED</div>
                 </div>
             </header>
 
@@ -97,44 +104,44 @@
                 <div class="stats-grid">
                     <div class="stat-card-premium">
                         <div class="stat-header">
-                            <span class="badge success" style="background: rgba(16, 185, 129, 0.1); color: var(--success);">On Track</span>
+                            <span class="badge success" style="background: rgba(16, 185, 129, 0.1); color: var(--success);">Sesuai Jadwal</span>
                         </div>
                         <div class="stat-val">68.4%</div>
-                        <div class="stat-label">Actual Progress</div>
+                        <div class="stat-label">Progres Aktual</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
-                            <span class="badge info">Planned</span>
+                            <span class="badge info">Rencana</span>
                         </div>
                         <div class="stat-val">70.2%</div>
-                        <div class="stat-label">Planned Progress</div>
+                        <div class="stat-label">Progres Rencana</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
-                            <span class="badge error">Deviation</span>
+                            <span class="badge error">Deviasi</span>
                         </div>
                         <div class="stat-val" style="color: var(--error);">-1.8%</div>
-                        <div class="stat-label">Schedule Variance</div>
+                        <div class="stat-label">Selisih Jadwal</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
-                            <span class="badge warning">Warning</span>
+                            <span class="badge warning">Peringatan</span>
                         </div>
                         <div class="stat-val">142</div>
-                        <div class="stat-label">Days Remaining</div>
+                        <div class="stat-label">Sisa Hari</div>
                     </div>
                 </div>
 
                 <!-- S-Curve Chart -->
                 <div class="card" style="margin-bottom: 24px;">
                     <div class="card-header">
-                        <h3 class="section-title">Project S-Curve (Cumulative Progress)</h3>
+                        <h3 class="section-title">Kurva-S Proyek (Progres Kumulatif)</h3>
                         <div style="display: flex; gap: 16px;">
                             <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600;">
-                                <span style="width: 12px; height: 12px; border-radius: 50%; background: #4F46E5;"></span> Planned
+                                <span style="width: 12px; height: 12px; border-radius: 50%; background: #4F46E5;"></span> Rencana
                             </div>
                             <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600;">
-                                <span style="width: 12px; height: 12px; border-radius: 50%; background: #10B981;"></span> Actual
+                                <span style="width: 12px; height: 12px; border-radius: 50%; background: #10B981;"></span> Aktual
                             </div>
                         </div>
                     </div>
@@ -146,11 +153,11 @@
                 <!-- Phase Breakdown -->
                 <div class="content-grid">
                     <div class="card">
-                        <h3 class="section-title" style="margin-bottom: 20px;">Construction Phase Breakdown</h3>
+                        <h3 class="section-title" style="margin-bottom: 20px;">Rincian Fase Konstruksi</h3>
                         <div style="display: flex; flex-direction: column; gap: 20px;">
                             <div class="phase-item">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                                    <span style="font-weight: 700; font-size: 14px;">Foundation & Piling</span>
+                                    <span style="font-weight: 700; font-size: 14px;">Pondasi & Tiang Pancang</span>
                                     <span style="font-weight: 700; font-size: 14px; color: var(--success);">100%</span>
                                 </div>
                                 <div style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 10px; overflow: hidden;">
@@ -159,7 +166,7 @@
                             </div>
                             <div class="phase-item">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                                    <span style="font-weight: 700; font-size: 14px;">Structural (L1 - L10)</span>
+                                    <span style="font-weight: 700; font-size: 14px;">Struktural (Lantai 1 - 10)</span>
                                     <span style="font-weight: 700; font-size: 14px; color: var(--primary-color);">85%</span>
                                 </div>
                                 <div style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 10px; overflow: hidden;">
@@ -168,7 +175,7 @@
                             </div>
                             <div class="phase-item">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                                    <span style="font-weight: 700; font-size: 14px;">MEP Systems</span>
+                                    <span style="font-weight: 700; font-size: 14px;">Sistem MEP</span>
                                     <span style="font-weight: 700; font-size: 14px; color: var(--warning);">42%</span>
                                 </div>
                                 <div style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 10px; overflow: hidden;">
@@ -177,7 +184,7 @@
                             </div>
                             <div class="phase-item">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                                    <span style="font-weight: 700; font-size: 14px;">Architectural Finishing</span>
+                                    <span style="font-weight: 700; font-size: 14px;">Penyelesaian Arsitektural</span>
                                     <span style="font-weight: 700; font-size: 14px; color: var(--text-light);">12%</span>
                                 </div>
                                 <div style="width: 100%; height: 8px; background: #E2E8F0; border-radius: 10px; overflow: hidden;">
@@ -188,19 +195,53 @@
                     </div>
 
                     <div class="card">
-                        <h3 class="section-title" style="margin-bottom: 20px;">Activity Log</h3>
+                        <h3 class="section-title" style="margin-bottom: 20px;">Log Aktivitas</h3>
                         <div style="display: flex; flex-direction: column; gap: 16px;">
                             <div style="padding: 12px; border-left: 4px solid var(--success); background: #F8FAFC;">
-                                <div style="font-size: 12px; color: var(--text-muted);">Today, 10:30 AM</div>
-                                <div style="font-weight: 600; font-size: 13px;">Poured concrete for Column C4 - Level 12</div>
+                                <div style="font-size: 12px; color: var(--text-muted);">Hari ini, 10:30 Siang</div>
+                                <div style="font-weight: 600; font-size: 13px;">Pengecoran beton Kolom C4 - Lantai 12</div>
                             </div>
                             <div style="padding: 12px; border-left: 4px solid var(--info); background: #F8FAFC;">
-                                <div style="font-size: 12px; color: var(--text-muted);">Yesterday, 04:15 PM</div>
-                                <div style="font-weight: 600; font-size: 13px;">Completed rebar inspection for West Wing</div>
+                                <div style="font-size: 12px; color: var(--text-muted);">Kemarin, 04:15 Sore</div>
+                                <div style="font-weight: 600; font-size: 13px;">Pemeriksaan tulangan besi Sayap Barat selesai</div>
                             </div>
                             <div style="padding: 12px; border-left: 4px solid var(--warning); background: #F8FAFC;">
-                                <div style="font-size: 12px; color: var(--text-muted);">23 Apr, 09:00 AM</div>
-                                <div style="font-weight: 600; font-size: 13px;">Material arrival: Structural Steel Beam (Batch 4)</div>
+                                <div style="font-size: 12px; color: var(--text-muted);">23 Apr, 09:00 Pagi</div>
+                                <div style="font-weight: 600; font-size: 13px;">Kedatangan material: Balok Baja Struktural (Gelombang 4)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Field Documentation Gallery -->
+                <div class="card" style="margin-top: 24px;">
+                    <div class="card-header">
+                        <h3 class="section-title">Dokumentasi Lapangan (Galeri Langsung)</h3>
+                        <button class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: flex; align-items: center; gap: 4px;"><span class="material-icons" style="font-size: 16px;">upload_file</span> Unggah Foto</button>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                        <!-- Photo 1 -->
+                        <div style="border: 2px solid #000000; box-shadow: 4px 4px 0px 0px #000000; background: #FFFFFF;">
+                            <img src="assets/user_img_1.jpg" style="width: 100%; height: 220px; object-fit: cover; display: block;" alt="Field Documentation 1">
+                            <div style="padding: 16px; border-top: 2px solid #000000;">
+                                <div style="font-weight: 800; text-transform: uppercase; font-size: 14px;">Tinjauan Lokasi (Foto 1)</div>
+                                <div style="font-size: 11px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-top: 6px;">24 APR 2026 | DIUNGGAH OLEH PENGAWAS</div>
+                            </div>
+                        </div>
+                        <!-- Photo 2 -->
+                        <div style="border: 2px solid #000000; box-shadow: 4px 4px 0px 0px #000000; background: #FFFFFF;">
+                            <img src="assets/user_img_2.jpg" style="width: 100%; height: 220px; object-fit: cover; display: block;" alt="Field Documentation 2">
+                            <div style="padding: 16px; border-top: 2px solid #000000;">
+                                <div style="font-weight: 800; text-transform: uppercase; font-size: 14px;">Detail Struktural (Foto 2)</div>
+                                <div style="font-size: 11px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-top: 6px;">24 APR 2026 | DIUNGGAH OLEH PENGAWAS</div>
+                            </div>
+                        </div>
+                        <!-- Photo 3 -->
+                        <div style="border: 2px solid #000000; box-shadow: 4px 4px 0px 0px #000000; background: #FFFFFF;">
+                            <img src="assets/user_img_3.jpg" style="width: 100%; height: 220px; object-fit: cover; display: block;" alt="Field Documentation 3">
+                            <div style="padding: 16px; border-top: 2px solid #000000;">
+                                <div style="font-weight: 800; text-transform: uppercase; font-size: 14px;">Inspeksi Material (Foto 3)</div>
+                                <div style="font-size: 11px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-top: 6px;">24 APR 2026 | DIUNGGAH OLEH PENGAWAS</div>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resource Inventory - ProView</title>
+    <title>Inventaris Material - ProView</title>
     <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Custom CSS -->
@@ -25,41 +25,47 @@
             <nav class="nav-links">
                 <a href="dashboard.html" class="nav-link">
                     <span class="material-icons">dashboard</span>
-                    <span>Monitoring Hub</span>
+                    <span>Pusat Pemantauan</span>
                 </a>
 
-                <p class="nav-group-label">Operational</p>
+                <p class="nav-group-label">Operasional</p>
                 <a href="progress.html" class="nav-link">
                     <span class="material-icons">trending_up</span>
-                    <span>Physical Progress</span>
+                    <span>Progres Fisik</span>
                 </a>
                 <a href="incidents.html" class="nav-link">
                     <span class="material-icons">report_problem</span>
-                    <span>Incidents & HSE</span>
+                    <span>Insiden & K3</span>
                 </a>
                 <a href="rfi.html" class="nav-link">
                     <span class="material-icons">help_outline</span>
-                    <span>Technical RFI</span>
+                    <span>Kendala Teknis (RFI)</span>
                 </a>
 
-                <p class="nav-group-label">Administrative</p>
+                <p class="nav-group-label">Manajemen Mitra</p>
+                <a href="vendor.html" class="nav-link">
+                    <span class="material-icons">business_center</span>
+                    <span>Rapor Kontraktor</span>
+                </a>
+
+                <p class="nav-group-label">Administrasi</p>
                 <a href="finance.html" class="nav-link">
                     <span class="material-icons">account_balance_wallet</span>
-                    <span>Finance & Budget</span>
+                    <span>Keuangan & Anggaran</span>
                 </a>
                 <a href="resources.html" class="nav-link active">
                     <span class="material-icons">inventory_2</span>
-                    <span>Resources</span>
+                    <span>SDM & Material</span>
                 </a>
 
                 <div style="margin-top: auto; padding-top: 20px; border-top: 2px solid #000000;">
                     <a href="settings.html" class="nav-link">
                         <span class="material-icons">settings</span>
-                        <span>Settings</span>
+                        <span>Pengaturan</span>
                     </a>
                     <a href="index.html" class="nav-link" style="color: #F87171;">
                         <span class="material-icons">logout</span>
-                        <span>Logout</span>
+                        <span>Keluar</span>
                     </a>
                 </div>
             </nav>
@@ -69,11 +75,11 @@
         <main class="main-content">
             <header class="top-navbar">
                 <div class="page-header">
-                    <h2>Resource & Inventory Control</h2>
+                    <h2>Kontrol SDM & Inventaris</h2>
                 </div>
                 
                 <div style="display: flex; gap: 24px; align-items: center;">
-                    <div style="width: 40px; height: 40px; border-radius: 12px; background: #1E1B4B; display: flex; align-items: center; justify-content: center; color: white;">EU</div>
+                    <div style="width: 44px; min-width: 44px; height: 44px; min-height: 44px; flex-shrink: 0; border: 2px solid #000000; background: var(--secondary-color); display: flex; align-items: center; justify-content: center; color: #000000; font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 16px; box-shadow: 2px 2px 0px 0px #000000;">ED</div>
                 </div>
             </header>
 
@@ -87,7 +93,7 @@
                             </div>
                         </div>
                         <div class="stat-val">42</div>
-                        <div class="stat-label">Heavy Equipment</div>
+                        <div class="stat-label">Alat Berat</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
@@ -96,17 +102,17 @@
                             </div>
                         </div>
                         <div class="stat-val">850T</div>
-                        <div class="stat-label">Structural Steel</div>
+                        <div class="stat-label">Baja Struktural</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);">
                                 <span class="material-icons">water_drop</span>
                             </div>
-                            <span class="badge warning">Low</span>
+                            <span class="badge warning">Rendah</span>
                         </div>
                         <div class="stat-val">12k L</div>
-                        <div class="stat-label">Fuel Reserves</div>
+                        <div class="stat-label">Cadangan Bahan Bakar</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
@@ -115,14 +121,14 @@
                             </div>
                         </div>
                         <div class="stat-val">94%</div>
-                        <div class="stat-label">Stock Availability</div>
+                        <div class="stat-label">Ketersediaan Stok</div>
                     </div>
                 </div>
 
                 <div class="content-grid">
-                    <!-- Heavy Equipment Utilization -->
+                    <!-- Alat Berat Utilization -->
                     <div class="card">
-                        <h3 class="section-title" style="margin-bottom: 20px;">Heavy Equipment Status</h3>
+                        <h3 class="section-title" style="margin-bottom: 20px;">Alat Berat Status</h3>
                         <div style="display: flex; flex-direction: column; gap: 16px;">
                             <div style="display: flex; align-items: center; gap: 16px; padding: 12px; background: #F8FAFC; border-radius: 12px;">
                                 <div style="width: 48px; height: 48px; border-radius: 10px; background: white; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-light);">
@@ -131,9 +137,9 @@
                                 <div style="flex: 1;">
                                     <div style="display: flex; justify-content: space-between;">
                                         <span style="font-weight: 700;">Tower Crane TC-01</span>
-                                        <span class="badge success">Operating</span>
+                                        <span class="badge success">Beroperasi</span>
                                     </div>
-                                    <div style="font-size: 12px; color: var(--text-muted);">Site: Grand Tower Jakarta • Efficiency: 92%</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">Lokasi: Grand Tower Jakarta • Efisiensi: 92%</div>
                                 </div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 16px; padding: 12px; background: #F8FAFC; border-radius: 12px;">
@@ -143,9 +149,9 @@
                                 <div style="flex: 1;">
                                     <div style="display: flex; justify-content: space-between;">
                                         <span style="font-weight: 700;">Excavator EX-04</span>
-                                        <span class="badge warning">Maintenance</span>
+                                        <span class="badge warning">Perawatan</span>
                                     </div>
-                                    <div style="font-size: 12px; color: var(--text-muted);">Scheduled service in 4 hours</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">Jadwal servis dalam 4 jam</div>
                                 </div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 16px; padding: 12px; background: #F8FAFC; border-radius: 12px;">
@@ -154,10 +160,10 @@
                                 </div>
                                 <div style="flex: 1;">
                                     <div style="display: flex; justify-content: space-between;">
-                                        <span style="font-weight: 700;">Concrete Mixer Truck M-12</span>
-                                        <span class="badge success">Operating</span>
+                                        <span style="font-weight: 700;">Truk Pengaduk Beton M-12</span>
+                                        <span class="badge success">Beroperasi</span>
                                     </div>
-                                    <div style="font-size: 12px; color: var(--text-muted);">Site: Sentosa Bridge Project</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">Lokasi: Proyek Jembatan Sentosa</div>
                                 </div>
                             </div>
                         </div>
@@ -165,22 +171,22 @@
 
                     <!-- Material Stock Alerts -->
                     <div class="card">
-                        <h3 class="section-title" style="margin-bottom: 20px;">Critical Material Alerts</h3>
+                        <h3 class="section-title" style="margin-bottom: 20px;">Peringatan Material Kritis</h3>
                         <div style="display: flex; flex-direction: column; gap: 12px;">
                             <div style="padding: 16px; border-radius: 12px; background: #FEF2F2; border: 1px solid #FEE2E2;">
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                                     <span style="font-weight: 700; color: #991B1B;">Portland Cement (Grade 43)</span>
-                                    <span style="font-weight: 800; color: #991B1B;">Low Stock</span>
+                                    <span style="font-weight: 800; color: #991B1B;">Stok Menipis</span>
                                 </div>
-                                <div style="font-size: 13px; color: #B91C1C;">Current: 45 Bags • Min. Required: 500 Bags</div>
-                                <button class="btn-primary" style="margin-top: 12px; background: #DC2626; height: 36px; font-size: 12px;">Order Replenishment</button>
+                                <div style="font-size: 13px; color: #B91C1C;">Saat ini: 45 Sak • Kebutuhan Min: 500 Sak</div>
+                                <button class="btn-primary" style="margin-top: 12px; background: #DC2626; height: 36px; font-size: 12px;">Pesan Tambahan</button>
                             </div>
                             <div style="padding: 16px; border-radius: 12px; background: #FFF7ED; border: 1px solid #FFEDD5;">
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                                     <span style="font-weight: 700; color: #9A3412;">Rebar 16mm (Grade 500)</span>
-                                    <span style="font-weight: 800; color: #9A3412;">Warning</span>
+                                    <span style="font-weight: 800; color: #9A3412;">Peringatan</span>
                                 </div>
-                                <div style="font-size: 13px; color: #C2410C;">Estimated depletion in 3 days.</div>
+                                <div style="font-size: 13px; color: #C2410C;">Diperkirakan habis dalam 3 hari.</div>
                             </div>
                         </div>
                     </div>

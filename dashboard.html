@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Leaflet.js for Interactive Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -27,41 +30,47 @@
             <nav class="nav-links">
                 <a href="dashboard.html" class="nav-link active">
                     <span class="material-icons">dashboard</span>
-                    <span>Monitoring Hub</span>
+                    <span>Pusat Pemantauan</span>
                 </a>
 
-                <p class="nav-group-label">Operational</p>
+                <p class="nav-group-label">Operasional</p>
                 <a href="progress.html" class="nav-link">
                     <span class="material-icons">trending_up</span>
-                    <span>Physical Progress</span>
+                    <span>Progres Fisik</span>
                 </a>
                 <a href="incidents.html" class="nav-link">
                     <span class="material-icons">report_problem</span>
-                    <span>Incidents & HSE</span>
+                    <span>Insiden & K3</span>
                 </a>
                 <a href="rfi.html" class="nav-link">
                     <span class="material-icons">help_outline</span>
-                    <span>Technical RFI</span>
+                    <span>Kendala Teknis (RFI)</span>
                 </a>
 
-                <p class="nav-group-label">Administrative</p>
+                <p class="nav-group-label">Manajemen Mitra</p>
+                <a href="vendor.html" class="nav-link">
+                    <span class="material-icons">business_center</span>
+                    <span>Rapor Kontraktor</span>
+                </a>
+
+                <p class="nav-group-label">Administrasi</p>
                 <a href="finance.html" class="nav-link">
                     <span class="material-icons">account_balance_wallet</span>
-                    <span>Finance & Budget</span>
+                    <span>Keuangan & Anggaran</span>
                 </a>
                 <a href="resources.html" class="nav-link">
                     <span class="material-icons">inventory_2</span>
-                    <span>Resources</span>
+                    <span>SDM & Material</span>
                 </a>
 
                 <div style="margin-top: auto; padding-top: 20px; border-top: 2px solid #000000;">
                     <a href="settings.html" class="nav-link">
                         <span class="material-icons">settings</span>
-                        <span>Settings</span>
+                        <span>Pengaturan</span>
                     </a>
                     <a href="index.html" class="nav-link" style="color: #F87171;">
                         <span class="material-icons">logout</span>
-                        <span>Logout</span>
+                        <span>Keluar</span>
                     </a>
                 </div>
             </nav>
@@ -72,15 +81,20 @@
             <!-- Top Navbar -->
             <header class="top-navbar">
                 <div class="page-header">
-                    <h2>Executive Monitoring Hub</h2>
+                    <h2>Pusat Pemantauan Eksekutif</h2>
                 </div>
 
                 <div style="display: flex; gap: 24px; align-items: center;">
-                    <div style="text-align: right;">
-                        <div style="font-size: 12px; color: var(--text-muted);">Welcome back,</div>
-                        <div style="font-size: 15px; font-weight: 700;">Executive Director</div>
+                    <!-- Print Button Added -->
+                    <button class="btn-primary" style="height: 44px; padding: 0 16px; font-size: 12px; gap: 8px; width: auto;" onclick="window.print()">
+                        <span class="material-icons" style="font-size: 18px;">print</span>
+                        CETAK BAST / LAPORAN
+                    </button>
+                    <div style="text-align: right; text-transform: uppercase;">
+                        <div style="font-size: 10px; font-weight: 800; color: #000000; letter-spacing: 1px;">Status: Aktif</div>
+                        <div style="font-size: 14px; font-weight: 800; border-bottom: 2px solid #000000;">Direktur Utama</div>
                     </div>
-                    <div style="width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, var(--primary-color), #8B5CF6); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">ED</div>
+                    <div style="width: 44px; min-width: 44px; height: 44px; min-height: 44px; flex-shrink: 0; border: 2px solid #000000; background: var(--secondary-color); display: flex; align-items: center; justify-content: center; color: #000000; font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 16px; box-shadow: 2px 2px 0px 0px #000000;">ED</div>
                 </div>
             </header>
 
@@ -92,21 +106,21 @@
                             <div class="stat-icon" style="background: rgba(79, 70, 229, 0.1); color: var(--primary-color);">
                                 <span class="material-icons">location_city</span>
                             </div>
-                            <span class="badge success">Active</span>
+                            <span class="badge success">Aktif</span>
                         </div>
                         <div class="stat-val">12</div>
-                        <div class="stat-label">Total Projects</div>
+                        <div class="stat-label">Total Proyek</div>
                     </div>
 
                     <div class="stat-card-premium">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--success);">
-                                <span class="material-icons">groups</span>
+                                <span class="material-icons">account_balance</span>
                             </div>
-                            <span class="badge success">+12%</span>
+                            <span class="badge success">Termin II</span>
                         </div>
-                        <div class="stat-val">1,450</div>
-                        <div class="stat-label">Total Workforce</div>
+                        <div class="stat-val">Rp 14.5M</div>
+                        <div class="stat-label">Anggaran Terserap</div>
                     </div>
 
                     <div class="stat-card-premium">
@@ -114,75 +128,77 @@
                             <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);">
                                 <span class="material-icons">warning</span>
                             </div>
-                            <span class="badge warning">4 Alerts</span>
+                            <span class="badge warning">4 Peringatan</span>
                         </div>
                         <div class="stat-val">08</div>
-                        <div class="stat-label">Open Incidents</div>
+                        <div class="stat-label">Insiden Terbuka</div>
                     </div>
 
-                    <div class="stat-card-premium">
+                    <div class="stat-card-premium" style="background: #FFFBEB; border-color: var(--warning);">
                         <div class="stat-header">
-                            <div class="stat-icon" style="background: rgba(59, 130, 246, 0.1); color: var(--info);">
-                                <span class="material-icons">query_stats</span>
+                            <div class="stat-icon" style="background: rgba(245, 158, 11, 0.2); color: var(--warning); border-color: var(--warning);">
+                                <span class="material-icons">fact_check</span>
                             </div>
-                            <span class="badge info">Stable</span>
+                            <span class="badge warning" style="border-color: var(--warning);">Perlu Tindakan</span>
                         </div>
-                        <div class="stat-val">94%</div>
-                        <div class="stat-label">Avg. Efficiency</div>
+                        <div class="stat-val" style="color: var(--warning);">3 Berkas</div>
+                        <div class="stat-label">Menunggu Verifikasi PPK</div>
                     </div>
                 </div>
 
                 <!-- Main Content Grid -->
                 <div class="content-grid">
                     <!-- Map Mockup -->
-                    <div class="card" style="padding: 0; overflow: hidden; height: 500px; position: relative;">
+                    <div class="card" style="padding: 0; overflow: hidden; position: relative; display: flex; flex-direction: column;">
                         <div style="padding: 24px; position: absolute; top: 0; left: 0; right: 0; z-index: 10; background: linear-gradient(to bottom, rgba(255,255,255,0.9), transparent);">
-                            <h3 class="section-title">Global Project Map</h3>
+                            <h3 class="section-title">Peta Proyek Keseluruhan</h3>
                         </div>
-                        <!-- Placeholder for Map -->
-                        <div style="width: 100%; height: 100%; background: #e5e7eb; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px;">
-                            <span class="material-icons" style="font-size: 64px; color: var(--text-light);">map</span>
-                            <p style="color: var(--text-muted); font-weight: 600;">Interactive Map View</p>
-                            <div style="display: flex; gap: 20px;">
-                                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 12px; height: 12px; border-radius: 50%; background: var(--success);"></span> <span style="font-size: 12px;">On Track</span></div>
-                                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 12px; height: 12px; border-radius: 50%; background: var(--warning);"></span> <span style="font-size: 12px;">At Risk</span></div>
-                                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 12px; height: 12px; border-radius: 50%; background: var(--error);"></span> <span style="font-size: 12px;">Critical</span></div>
-                            </div>
+                        <!-- Interactive Map of Sulawesi Tengah -->
+                        <div id="projectMap" style="flex: 1; width: 100%; min-height: 400px; background: #e5e7eb; position: relative; z-index: 1;"></div>
+                        
+                        <!-- Brutalist Legend Overlay -->
+                        <div style="position: absolute; bottom: 24px; left: 24px; background: #FFFFFF; border: 2px solid #000000; padding: 12px 16px; box-shadow: 2px 2px 0px 0px #000000; z-index: 1000; display: flex; gap: 20px;">
+                            <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; border: 2px solid #000000; background: var(--success);"></span> <span style="font-size: 12px; font-weight: 800; text-transform: uppercase;">Sesuai Jadwal</span></div>
+                            <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; border: 2px solid #000000; background: var(--warning);"></span> <span style="font-size: 12px; font-weight: 800; text-transform: uppercase;">Beresiko</span></div>
+                            <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 14px; height: 14px; border: 2px solid #000000; background: var(--error);"></span> <span style="font-size: 12px; font-weight: 800; text-transform: uppercase;">Kritis</span></div>
                         </div>
                     </div>
 
                     <!-- Recent Activities / Alerts -->
                     <div class="card" style="display: flex; flex-direction: column;">
                         <div class="card-header">
-                            <h3 class="section-title">High Priority Alerts</h3>
-                            <button class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">View All</button>
+                            <h3 class="section-title">Peringatan Prioritas Tinggi</h3>
+                            <button class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">Lihat Semua</button>
                         </div>
                         <div style="display: flex; flex-direction: column; gap: 16px; flex: 1;">
-                            <div style="padding: 16px; border-radius: 12px; background: #FFF7ED; border: 1px solid #FFEDD5; display: flex; gap: 16px;">
+                            <div style="padding: 16px; background: #FFF7ED; border: 2px solid #000000; display: flex; gap: 16px; box-shadow: 2px 2px 0px 0px #000000;">
                                 <span class="material-icons" style="color: var(--warning);">warning</span>
                                 <div>
-                                    <div style="font-weight: 700; font-size: 14px;">Weather Alert: High Wind</div>
-                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Grand Tower Site (Zone A). Crane operation suspended.</div>
+                                    <div style="font-weight: 800; font-size: 14px; text-transform: uppercase;">Peringatan Cuaca: Angin Kencang</div>
+                                    <div style="font-size: 12px; color: var(--text-main); font-weight: 500; margin-top: 4px;">Proyek Grand Tower (Zona A). Operasi derek dihentikan.</div>
                                 </div>
                             </div>
-                            <div style="padding: 16px; border-radius: 12px; background: #FEF2F2; border: 1px solid #FEE2E2; display: flex; gap: 16px;">
-                                <span class="material-icons" style="color: var(--error);">report</span>
+                            <div style="padding: 16px; background: #FEF2F2; border: 2px solid #000000; display: flex; gap: 16px; box-shadow: 2px 2px 0px 0px #000000;">
+                                <span class="material-icons" style="color: var(--error);">gavel</span>
                                 <div>
-                                    <div style="font-weight: 700; font-size: 14px;">Incident Reported</div>
-                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Bridge Project B. Minor equipment failure reported.</div>
+                                    <div style="font-weight: 800; font-size: 14px; text-transform: uppercase;">Peringatan Deviasi Kritis (SCM)</div>
+                                    <div style="font-size: 12px; color: var(--text-main); font-weight: 500; margin-top: 4px;">Proyek Jembatan Poso. Deviasi -10%. Segera panggil kontraktor untuk SCM 1.</div>
                                 </div>
                             </div>
-                            <div style="padding: 16px; border-radius: 12px; background: #F0F9FF; border: 1px solid #E0F2FE; display: flex; gap: 16px;">
+                            <div style="padding: 16px; background: #F0F9FF; border: 2px solid #000000; display: flex; gap: 16px; box-shadow: 2px 2px 0px 0px #000000;">
                                 <span class="material-icons" style="color: var(--info);">info</span>
                                 <div>
-                                    <div style="font-weight: 700; font-size: 14px;">Technical RFI Deadline</div>
-                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Structural inquiry for Mall Expansion due in 4 hours.</div>
+                                    <div style="font-weight: 800; font-size: 14px; text-transform: uppercase;">Tenggat Waktu RFI</div>
+                                    <div style="font-size: 12px; color: var(--text-main); font-weight: 500; margin-top: 4px;">Pertanyaan struktur untuk Ekspansi Mall jatuh tempo dalam 4 jam.</div>
                                 </div>
                             </div>
                         </div>
                         
                         <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-light);">
-                            <h4 style="font-size: 14px; margin-bottom: 16px;">Efficiency Overview</h4>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                                <h4 style="font-size: 14px; margin: 0;">Kurva S (Rencana vs Realisasi)</h4>
+                                <span class="badge error" style="background: var(--error); color: white;">Deviasi -2.5%</span>
+                            </div>
                             <div style="height: 150px;">
                                 <canvas id="efficiencyChart"></canvas>
                             </div>
@@ -195,29 +211,116 @@
 
     <script>
         const ctx = document.getElementById('efficiencyChart').getContext('2d');
-        new Chart(ctx, {
+        new Chart(document.getElementById('efficiencyChart').getContext('2d'), {
             type: 'line',
             data: {
-                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                datasets: [{
-                    label: 'System Efficiency',
-                    data: [85, 88, 92, 90, 94, 96, 94],
-                    borderColor: '#4F46E5',
-                    backgroundColor: 'rgba(79, 70, 229, 0.1)',
-                    fill: true,
-                    tension: 0.4,
-                    borderWidth: 3
-                }]
+                labels: ['Bln 1', 'Bln 2', 'Bln 3', 'Bln 4', 'Bln 5', 'Bln 6', 'Bln 7'],
+                datasets: [
+                    {
+                        label: 'Rencana',
+                        data: [5, 15, 30, 50, 75, 90, 100],
+                        borderColor: '#A1A1AA',
+                        borderWidth: 3,
+                        borderDash: [5, 5],
+                        backgroundColor: 'transparent',
+                        fill: false,
+                        tension: 0.4,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'Realisasi Fisik',
+                        data: [4, 12, 28, 45, 68, 80],
+                        borderColor: '#000000',
+                        borderWidth: 3,
+                        backgroundColor: 'rgba(250, 204, 21, 0.2)', /* Yellow fill */
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#FACC15',
+                        pointBorderColor: '#000000',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }
+                ]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: { legend: { display: false } },
                 scales: {
-                    y: { display: false },
+                    y: { beginAtZero: false, min: 60, max: 100, border: { dash: [4, 4] } },
                     x: { grid: { display: false } }
                 }
             }
+        });
+
+        // Initialize Map for Sulawesi Tengah
+        document.addEventListener('DOMContentLoaded', function() {
+            // Coordinate center of Sulawesi Tengah
+            var map = L.map('projectMap', { zoomControl: false }).setView([-1.4300, 121.4456], 7);
+            
+            // Add Zoom Control to top right so it doesn't overlap title
+            L.control.zoom({ position: 'topright' }).addTo(map);
+
+            // Define Base Layers
+            var cartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap',
+                subdomains: 'abcd',
+                maxZoom: 20
+            });
+
+            var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri',
+                maxZoom: 19
+            });
+
+            var streetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap',
+                maxZoom: 19
+            });
+
+            // Add Default Layer
+            cartoLight.addTo(map);
+
+            // Add Layer Control Switcher
+            var baseMaps = {
+                "Minimalist (Default)": cartoLight,
+                "Street Map": streetMap,
+                "Satellite Mode": satellite
+            };
+            L.control.layers(baseMaps, null, { position: 'topright' }).addTo(map);
+
+            // Brutalist Marker Icon Generator
+            var createBrutalIcon = function(colorStr) {
+                // Determine actual hex code for mapping since Leaflet uses raw DOM
+                let colorHex = '#000000';
+                if(colorStr === 'var(--success)') colorHex = '#16A34A';
+                if(colorStr === 'var(--warning)') colorHex = '#EA580C';
+                if(colorStr === 'var(--error)') colorHex = '#DC2626';
+
+                return L.divIcon({
+                    className: 'brutal-marker',
+                    html: `<div style="width: 16px; height: 16px; background-color: ${colorHex}; border: 2px solid #000000; box-shadow: 2px 2px 0px 0px #000000; border-radius: 0;"></div>`,
+                    iconSize: [20, 20],
+                    iconAnchor: [10, 10],
+                    popupAnchor: [0, -10]
+                });
+            };
+
+            // Custom popup style via CSS injection
+            const popupStyle = document.createElement('style');
+            popupStyle.innerHTML = `
+                .leaflet-popup-content-wrapper { border-radius: 0; border: 2px solid #000; box-shadow: 4px 4px 0px 0px #000; font-family: 'Inter', sans-serif; }
+                .leaflet-popup-tip-container { display: none; }
+                .leaflet-popup-content { margin: 12px; font-size: 13px; }
+            `;
+            document.head.appendChild(popupStyle);
+
+            // Dummy project locations in Sulawesi Tengah
+            L.marker([-0.8917, 119.8707], {icon: createBrutalIcon('var(--success)')}).addTo(map).bindPopup('<div style="font-weight:800;text-transform:uppercase;">Grand Tower Palu</div><div style="font-weight:600;margin-top:4px;margin-bottom:8px;">STATUS: SESUAI JADWAL</div><a href="progress.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center; padding:4px 8px; font-size:10px; width:100%;">Lihat Detail</a>');
+            L.marker([-1.3962, 120.7516], {icon: createBrutalIcon('var(--warning)')}).addTo(map).bindPopup('<div style="font-weight:800;text-transform:uppercase;">Proyek Jembatan Poso</div><div style="font-weight:600;margin-top:4px;margin-bottom:8px;">STATUS: BERESIKO (CUACA)</div><a href="progress.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center; padding:4px 8px; font-size:10px; width:100%;">Lihat Detail</a>');
+            L.marker([-0.9516, 122.7885], {icon: createBrutalIcon('var(--success)')}).addTo(map).bindPopup('<div style="font-weight:800;text-transform:uppercase;">Ekspansi Mall Luwuk</div><div style="font-weight:600;margin-top:4px;margin-bottom:8px;">STATUS: SESUAI JADWAL</div><a href="progress.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center; padding:4px 8px; font-size:10px; width:100%;">Lihat Detail</a>');
+            L.marker([-2.2743, 121.9862], {icon: createBrutalIcon('var(--error)')}).addTo(map).bindPopup('<div style="font-weight:800;text-transform:uppercase;">Fasilitas Smelter Morowali</div><div style="font-weight:600;margin-top:4px;margin-bottom:8px;">STATUS: KRITIS (RFI)</div><a href="progress.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center; padding:4px 8px; font-size:10px; width:100%;">Lihat Detail</a>');
         });
     </script>
 </body>

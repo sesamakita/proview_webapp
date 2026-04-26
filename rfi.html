@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical RFI - ProView</title>
+    <title>Kendala Teknis (RFI) - ProLihat</title>
     <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Custom CSS -->
@@ -17,49 +17,55 @@
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="sidebar-logo">
-                    <img src="assets/logo.png" alt="ProView Logo">
+                    <img src="assets/logo.png" alt="ProLihat Logo">
                 </div>
-                <h3>ProView</h3>
+                <h3>ProLihat</h3>
             </div>
 
             <nav class="nav-links">
                 <a href="dashboard.html" class="nav-link">
                     <span class="material-icons">dashboard</span>
-                    <span>Monitoring Hub</span>
+                    <span>Pusat Pemantauan</span>
                 </a>
 
-                <p class="nav-group-label">Operational</p>
+                <p class="nav-group-label">Operasional</p>
                 <a href="progress.html" class="nav-link">
                     <span class="material-icons">trending_up</span>
-                    <span>Physical Progress</span>
+                    <span>Progres Fisik</span>
                 </a>
                 <a href="incidents.html" class="nav-link">
                     <span class="material-icons">report_problem</span>
-                    <span>Incidents & HSE</span>
+                    <span>Insiden & K3</span>
                 </a>
                 <a href="rfi.html" class="nav-link active">
                     <span class="material-icons">help_outline</span>
-                    <span>Technical RFI</span>
+                    <span>Kendala Teknis (RFI)</span>
                 </a>
 
-                <p class="nav-group-label">Administrative</p>
+                <p class="nav-group-label">Manajemen Mitra</p>
+                <a href="vendor.html" class="nav-link">
+                    <span class="material-icons">business_center</span>
+                    <span>Rapor Kontraktor</span>
+                </a>
+
+                <p class="nav-group-label">Administrasi</p>
                 <a href="finance.html" class="nav-link">
                     <span class="material-icons">account_balance_wallet</span>
-                    <span>Finance & Budget</span>
+                    <span>Keuangan & Anggaran</span>
                 </a>
                 <a href="resources.html" class="nav-link">
                     <span class="material-icons">inventory_2</span>
-                    <span>Resources</span>
+                    <span>SDM & Material</span>
                 </a>
 
                 <div style="margin-top: auto; padding-top: 20px; border-top: 2px solid #000000;">
                     <a href="settings.html" class="nav-link">
                         <span class="material-icons">settings</span>
-                        <span>Settings</span>
+                        <span>Pengaturan</span>
                     </a>
                     <a href="index.html" class="nav-link" style="color: #F87171;">
                         <span class="material-icons">logout</span>
-                        <span>Logout</span>
+                        <span>Keluar</span>
                     </a>
                 </div>
             </nav>
@@ -69,14 +75,14 @@
         <main class="main-content">
             <header class="top-navbar">
                 <div class="page-header">
-                    <h2>Technical RFI Tracking</h2>
+                    <h2>Pelacakan Kendala Teknis (RFI)</h2>
                 </div>
                 
                 <div style="display: flex; gap: 24px; align-items: center;">
-                    <button class="btn-primary" style="height: 44px; padding: 0 20px; font-size: 14px;">
-                        <span class="material-icons">add</span> New RFI
+                    <button class="btn-primary" style="height: 44px; padding: 0 20px; font-size: 14px; box-shadow: 2px 2px 0px 0px #000000;">
+                        <span class="material-icons">add</span> RFI Baru
                     </button>
-                    <div style="width: 40px; height: 40px; border-radius: 12px; background: #1E1B4B; display: flex; align-items: center; justify-content: center; color: white;">EU</div>
+                    <div style="width: 44px; min-width: 44px; height: 44px; min-height: 44px; flex-shrink: 0; border: 2px solid #000000; background: var(--secondary-color); display: flex; align-items: center; justify-content: center; color: #000000; font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 16px; box-shadow: 2px 2px 0px 0px #000000;">ED</div>
                 </div>
             </header>
 
@@ -90,27 +96,27 @@
                             </div>
                         </div>
                         <div class="stat-val">48</div>
-                        <div class="stat-label">Total RFIs</div>
+                        <div class="stat-label">Total RFI</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--warning);">
                                 <span class="material-icons">pending_actions</span>
                             </div>
-                            <span class="badge warning">Action Needed</span>
+                            <span class="badge warning">Perlu Tindakan</span>
                         </div>
                         <div class="stat-val">12</div>
-                        <div class="stat-label">Pending Response</div>
+                        <div class="stat-label">Menunggu Respon</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
                             <div class="stat-icon" style="background: rgba(239, 68, 68, 0.1); color: var(--error);">
                                 <span class="material-icons">timer</span>
                             </div>
-                            <span class="badge error">Overdue</span>
+                            <span class="badge error">Terlambat</span>
                         </div>
                         <div class="stat-val">05</div>
-                        <div class="stat-label">Overdue RFIs</div>
+                        <div class="stat-label">RFI Terlambat</div>
                     </div>
                     <div class="stat-card-premium">
                         <div class="stat-header">
@@ -119,19 +125,19 @@
                             </div>
                         </div>
                         <div class="stat-val">31</div>
-                        <div class="stat-label">Closed / Resolved</div>
+                        <div class="stat-label">Selesai / Ditutup</div>
                     </div>
                 </div>
 
                 <!-- RFI Table -->
                 <div class="card" style="padding: 0; overflow: hidden;">
                     <div style="padding: 24px; border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;">
-                        <h3 class="section-title">Technical Request Log</h3>
+                        <h3 class="section-title">Log Permintaan Teknis</h3>
                         <div style="display: flex; gap: 12px;">
                             <select style="padding: 8px 16px; border: 1px solid var(--border-light); border-radius: 8px; font-size: 14px; outline: none; background: white;">
-                                <option>Filter: All Category</option>
-                                <option>Structural</option>
-                                <option>Architectural</option>
+                                <option>Saring: Semua Kategori</option>
+                                <option>Struktural</option>
+                                <option>Arsitektural</option>
                                 <option>MEP</option>
                             </select>
                         </div>
@@ -140,47 +146,47 @@
                     <table style="width: 100%; border-collapse: collapse;">
                         <thead>
                             <tr style="background: #F8FAFC; text-align: left;">
-                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">RFI ID</th>
-                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">Subject</th>
-                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">Category</th>
-                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">Due Date</th>
+                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">ID RFI</th>
+                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">Subjek</th>
+                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">Kategori</th>
+                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">Tenggat Waktu</th>
                                 <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted);">Status</th>
-                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted); text-align: right;">Action</th>
+                                <th style="padding: 16px 24px; font-size: 13px; font-weight: 700; color: var(--text-muted); text-align: right;">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr style="border-bottom: 1px solid var(--border-light);">
                                 <td style="padding: 20px 24px; font-size: 14px; font-weight: 700; color: var(--primary-color);">RFI-STR-0042</td>
                                 <td style="padding: 20px 24px;">
-                                    <div style="font-weight: 600; font-size: 14px;">Rebar Conflict at Column C12</div>
-                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Sentosa Bridge Project</div>
+                                    <div style="font-weight: 600; font-size: 14px;">Konflik Tulangan di Kolom C12</div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Proyek Jembatan Sentosa</div>
                                 </td>
-                                <td style="padding: 20px 24px; font-size: 14px;">Structural</td>
-                                <td style="padding: 20px 24px; font-size: 14px; color: var(--error); font-weight: 600;">Today (Expired)</td>
-                                <td style="padding: 20px 24px;"><span class="badge warning">In Review</span></td>
-                                <td style="padding: 20px 24px; text-align: right;"><button class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">Reply</button></td>
+                                <td style="padding: 20px 24px; font-size: 14px;">Struktural</td>
+                                <td style="padding: 20px 24px; font-size: 14px; color: var(--error); font-weight: 600;">Hari Ini (Kedaluwarsa)</td>
+                                <td style="padding: 20px 24px;"><span class="badge warning">Ditinjau</span></td>
+                                <td style="padding: 20px 24px; text-align: right;"><button class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">Balas</button></td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--border-light);">
                                 <td style="padding: 20px 24px; font-size: 14px; font-weight: 700; color: var(--primary-color);">RFI-ARC-0015</td>
                                 <td style="padding: 20px 24px;">
-                                    <div style="font-weight: 600; font-size: 14px;">Curtain Wall Bracket Detail</div>
-                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Grand Tower Site</div>
+                                    <div style="font-weight: 600; font-size: 14px;">Detail Braket Dinding Tirai</div>
+                                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Lokasi Grand Tower</div>
                                 </td>
-                                <td style="padding: 20px 24px; font-size: 14px;">Architectural</td>
+                                <td style="padding: 20px 24px; font-size: 14px;">Arsitektural</td>
                                 <td style="padding: 20px 24px; font-size: 14px;">28 Apr, 2026</td>
-                                <td style="padding: 20px 24px;"><span class="badge info">Open</span></td>
-                                <td style="padding: 20px 24px; text-align: right;"><button class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">Open Task</button></td>
+                                <td style="padding: 20px 24px;"><span class="badge info">Terbuka</span></td>
+                                <td style="padding: 20px 24px; text-align: right;"><button class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">Buka Tugas</button></td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--border-light);">
                                 <td style="padding: 20px 24px; font-size: 14px; font-weight: 700; color: var(--primary-color);">RFI-MEP-0089</td>
                                 <td style="padding: 20px 24px;">
-                                    <div style="font-weight: 600; font-size: 14px;">HVAC Ducting Clearance Zone</div>
+                                    <div style="font-weight: 600; font-size: 14px;">Zona Bebas Saluran HVAC</div>
                                     <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Mall Expansion</div>
                                 </td>
-                                <td style="padding: 20px 24px; font-size: 14px;">MEP Systems</td>
-                                <td style="padding: 20px 24px; font-size: 14px;">Closed</td>
-                                <td style="padding: 20px 24px;"><span class="badge success">Answered</span></td>
-                                <td style="padding: 20px 24px; text-align: right;"><button class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">History</button></td>
+                                <td style="padding: 20px 24px; font-size: 14px;">Sistem MEP</td>
+                                <td style="padding: 20px 24px; font-size: 14px;">Ditutup</td>
+                                <td style="padding: 20px 24px;"><span class="badge success">Dijawab</span></td>
+                                <td style="padding: 20px 24px; text-align: right;"><button class="btn-secondary" style="padding: 6px 12px; font-size: 12px;">Riwayat</button></td>
                             </tr>
                         </tbody>
                     </table>
