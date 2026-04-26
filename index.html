@@ -69,12 +69,7 @@
                     </div>
                 </form>
 
-                <!-- Dots at bottom -->
-                <div style="display: flex; justify-content: center; gap: 8px; margin-top: auto;">
-                    <div style="width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-                    <div style="width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-                    <div style="width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-                </div>
+
             </div>
 
             <!-- Right Side: Hero -->
@@ -88,6 +83,16 @@
     <script>
         function handleLogin(event) {
             event.preventDefault();
+            
+            const usernameInput = document.getElementById('username').value;
+            const passwordInput = document.getElementById('password').value;
+            
+            // Hardcoded credentials for GitHub Pages demo
+            if (usernameInput !== 'admin' || passwordInput !== 'admin123') {
+                alert('Akses Ditolak: Username atau Password salah. (Gunakan admin / admin123)');
+                return;
+            }
+
             const button = event.target.querySelector('button');
             const originalText = button.innerHTML;
 
